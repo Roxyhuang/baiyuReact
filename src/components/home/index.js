@@ -88,7 +88,7 @@ const Home = Form.create()(React.createClass({
                         <FormItem>
                             <div className="ant-search-input-wrapper" style={{width: 145}}>
                                 <InputGroup className={searchCls}>
-                                    <Input placeholder="关键字" value={this.state.value} onPressEnter={this.handleSearch} />
+                                    <Input placeholder="关键字" value={this.state.value} onChange={this.handleInputChange} onPressEnter={this.handleSearch} />
                                     <div className="ant-input-group-wrap">
                                         <Button icon="search" className={btnCls} onClick={this.handleSearch} />
                                     </div>
