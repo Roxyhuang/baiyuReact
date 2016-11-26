@@ -1,4 +1,5 @@
 import React from 'react';
+import FilterNav from '../common/FilterNav';
 
 
 class interestGroupList extends React.Component{
@@ -7,7 +8,7 @@ class interestGroupList extends React.Component{
 
     render(){
         return(
-            <div>123</div>
+           <FilterNav/>
         )
     }
 }
