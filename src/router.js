@@ -12,7 +12,7 @@ export default function({ history }) {
         <Route name="首页" path="/" components={Frame}>
             <IndexRoute components={Home} />
             <Route path="/home" component={Home} />
-            <Route path="/interestGroupLList" component={interestGroupList}/>
+            <Route path="/interestGroupList" component={interestGroupList}/>
             <Route path="/login" components={Login}></Route>
         </Route>
     </Router>
