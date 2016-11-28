@@ -2,52 +2,42 @@ import React from 'react';
 import sty from './home.css';
 import {Carousel, Form, DatePicker, Input, Button, Select} from 'antd';
 import classNames from 'classnames';
+import { connect } from 'dva';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
 const InputGroup = Input.Group;
-const { MonthPicker, RangePicker } = DatePicker;
-
-function handleChange(value) {
-    console.log(`selected ${value}`);
-}
 
 const Home = Form.create()(React.createClass({
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.form.validateFields((err, values) => {
-            if (!err) {
-                console.log('Received values of form: ', values);
-            }
-        });
-    },
-    getInitialState() {
+    getInitialState () {
         return {
-            value: '',
-            focus: false,
-        };
+            form: {
+                type: '',
+                date: '',
+                city: '',
+                keyword: '',
+            },
+        }
     },
-    handleInputChange(e) {
-        this.setState({
-            value: e.target.value,
-        });
+
+    handleInputChange (key, value) {
+        let { form } = this.state;
+        form[key] = value.target.value;
+        this.setState(form)
     },
-    handleFocusBlur(e) {
-        this.setState({
-            focus: e.target === document.activeElement,
-        });
+
+    handleSearch(e) {
+        e.preventDefault();
+        this.props.dispatch({ type: 'home/search', payload: {data: this.state.form}});
     },
-    handleSearch() {
-        console.log(123)
-    },
+
     render() {
         const btnCls = classNames({
             'ant-search-btn': true,
-            'ant-search-btn-noempty': !!this.state.value.trim(),
+            'ant-search-btn-noempty': !!this.state.form.keyword.trim(),
         });
         const searchCls = classNames({
             'ant-search-input': true,
-            'ant-search-input-focus': this.state.focus,
         });
         return (
             <div>
@@ -67,16 +57,16 @@ const Home = Form.create()(React.createClass({
 
                 {/* search Bar */}
                 <div className={sty.searchBar}>
-                    <Form inline onSubmit={this.handleSubmit} style={{margin: '0 auto', width: 620}}>
+                    <Form inline onSubmit={this.handleSearch} style={{margin: '0 auto', width: 620}}>
                         <FormItem>
-                            <Select size="default" placeholder='类别' style={{width: 145}} onChange={handleChange}>
+                            <Select size="default" placeholder='类别' style={{width: 145}} onChange={this.handleChange}>
                                 <Option value="1">类别</Option>
                                 <Option value="2">Lucy</Option>
                                 <Option value="3">Yiminghe</Option>
                             </Select>
                         </FormItem>
                         <FormItem>
-                            <Select size="default" placeholder="城市" style={{width: 145}} onChange={handleChange}>
+                            <Select size="default" placeholder="城市" style={{width: 145}} onChange={this.handleChange}>
                                 <Option value="1">城市</Option>
                                 <Option value="2">Lucy</Option>
                                 <Option value="3">Yiminghe</Option>
@@ -88,9 +78,11 @@ const Home = Form.create()(React.createClass({
                         <FormItem>
                             <div className="ant-search-input-wrapper" style={{width: 145}}>
                                 <InputGroup className={searchCls}>
-                                    <Input placeholder="关键字" value={this.state.value} onChange={this.handleInputChange} onPressEnter={this.handleSearch} />
+                                    <Input placeholder="关键字" value={this.state.form.keyword}
+                                           onChange={this.handleInputChange.bind(this, 'keyword')}
+                                           onPressEnter={this.handleSearch} />
                                     <div className="ant-input-group-wrap">
-                                        <Button icon="search" className={btnCls} onClick={this.handleSearch} />
+                                        <Button icon="search" className={btnCls} htmlType="submit" />
                                     </div>
                                 </InputGroup>
                             </div>
@@ -105,4 +97,8 @@ const Home = Form.create()(React.createClass({
     },
 }));
 
-export default Home;
+function mapStateToProps(state) {
+    return state.home;
+}
+
+export default connect(mapStateToProps)(Home);

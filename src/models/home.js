@@ -1,11 +1,26 @@
-import dva from 'dva';
+import pathToRegexp from 'path-to-regexp';
+
+import {fetchList} from '../services/home';
 
 export default {
-  namespace: 'products',
-  state: [],
+  namespace: 'home',
+  state: {
+
+  },
   reducers: {
-    'delete'(state, { payload: id }) {
-      return state.filter(item => item.id !== id);
+    changeDate (state, {payload: dateString}) {
+      return {...state, date: dateString}
+    }
+  },
+  effects: {
+    *search({payload}, {call}) {
+      let {data} = payload;
+      yield call(fetchList, data);
     },
   },
+  subscriptions: {
+    setup({dispatch, history}) {
+
+    },
+  }
 };

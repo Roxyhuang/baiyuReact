@@ -11,6 +11,7 @@
     "dva": "^1.1.0",
     "home": "^1.0.1",
     "normalize.css": "^5.0.0",
+    "path-to-regexp": "^1.7.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "routes": "^2.1.0",
