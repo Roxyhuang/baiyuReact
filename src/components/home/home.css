@@ -3,3 +3,25 @@
     margin-top: -50px;
     margin-bottom: 15px;
 }
+
+.container {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.brandActivity {
+    margin-top: 100px;
+}
+
+.brandActivity h1 {
+    margin-bottom: 15px;
+}
+
+.row {
+    border-top: 1px #ececec solid;
+    border-bottom: 1px #ececec solid;
+}
+
+.card {
+    /*padding: 5px;*/
+}

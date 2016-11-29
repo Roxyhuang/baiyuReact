@@ -1,8 +1,8 @@
 import React from 'react';
 import sty from './home.css';
-import {Carousel, Form, DatePicker, Input, Button, Select} from 'antd';
+import {Carousel, Form, DatePicker, Input, Button, Select, Row, Col, Card} from 'antd';
 import classNames from 'classnames';
-import { connect } from 'dva';
+import { fetchList } from '../../services/home';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -21,14 +21,17 @@ const Home = Form.create()(React.createClass({
     },
 
     handleInputChange (key, value) {
-        let { form } = this.state;
+        let {form} = this.state;
         form[key] = value.target.value;
         this.setState(form)
     },
 
     handleSearch(e) {
         e.preventDefault();
-        this.props.dispatch({ type: 'home/search', payload: {data: this.state.form}});
+        fetchList(this.state.form, res => {
+           console.log(res)
+        });
+        // this.props.dispatch({ type: 'home/search', payload: {data: this.state.form}});
     },
 
     render() {
@@ -80,16 +83,35 @@ const Home = Form.create()(React.createClass({
                                 <InputGroup className={searchCls}>
                                     <Input placeholder="关键字" value={this.state.form.keyword}
                                            onChange={this.handleInputChange.bind(this, 'keyword')}
-                                           onPressEnter={this.handleSearch} />
+                                           onPressEnter={this.handleSearch}/>
                                     <div className="ant-input-group-wrap">
-                                        <Button icon="search" className={btnCls} htmlType="submit" />
+                                        <Button icon="search" className={btnCls} htmlType="submit"/>
                                     </div>
                                 </InputGroup>
                             </div>
-
-                            {/*<Input addonAfter={<Button icon="search" onClick={this.handleSearch}/>} type="password" placeholder="Password" />*/}
                         </FormItem>
                     </Form>
+                </div>
+
+                <div className={sty.container}>
+                    <div className={sty.brandActivity}>
+                        <h1>品牌活动</h1>
+                        <Row className={sty.row}>
+                            <Col span="6">
+                                <img src="http://temp.im/240x160" alt=""/>
+                                <div></div>
+                            </Col>
+                            <Col span="6">
+                                <img src="http://temp.im/240x160" alt=""/>
+                            </Col>
+                            <Col span="6">
+                                <img src="http://temp.im/240x160" alt=""/>
+                            </Col>
+                            <Col span="6">
+                                <img src="http://temp.im/240x160" alt=""/>
+                            </Col>
+                        </Row>
+                    </div>
                 </div>
             </div>
 
@@ -97,8 +119,4 @@ const Home = Form.create()(React.createClass({
     },
 }));
 
-function mapStateToProps(state) {
-    return state.home;
-}
-
-export default connect(mapStateToProps)(Home);
+export default Home;

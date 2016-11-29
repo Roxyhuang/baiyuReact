@@ -20,6 +20,7 @@
   "devDependencies": {
     "atool-build": "^0.9.0",
     "atool-test-mocha": "^0.1.5",
+    "axios": "^0.15.3",
     "babel-plugin-dev-expression": "^0.2.1",
     "babel-plugin-dva-hmr": "^0.2.0",
     "babel-plugin-import": "^1.1.0",
