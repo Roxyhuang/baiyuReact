@@ -15,13 +15,15 @@
 
 .brandActivity h1 {
     margin-bottom: 15px;
+    display: inline-block;
 }
 
 .row {
-    border-top: 1px #ececec solid;
-    border-bottom: 1px #ececec solid;
+
 }
 
-.card {
-    /*padding: 5px;*/
+.col {
+    padding: 5px;
+    border-top: 1px #ececec solid;
+    border-bottom: 1px #ececec solid;
 }

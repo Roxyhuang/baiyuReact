@@ -3,6 +3,8 @@ import sty from './home.css';
 import {Carousel, Form, DatePicker, Input, Button, Select, Row, Col, Card} from 'antd';
 import classNames from 'classnames';
 import { fetchList } from '../../services/home';
+import { Link } from 'dva/router';
+
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -95,19 +97,24 @@ const Home = Form.create()(React.createClass({
 
                 <div className={sty.container}>
                     <div className={sty.brandActivity}>
-                        <h1>品牌活动</h1>
+                        <div>
+                            <h1>品牌活动</h1>
+                            <span style={{float: 'right'}}>
+                                <Link>更多</Link>
+                            </span>
+                        </div>
                         <Row className={sty.row}>
-                            <Col span="6">
+                            <Col span="6" className={sty.col}>
                                 <img src="http://temp.im/240x160" alt=""/>
                                 <div></div>
                             </Col>
-                            <Col span="6">
+                            <Col span="6" className={sty.col}>
                                 <img src="http://temp.im/240x160" alt=""/>
                             </Col>
-                            <Col span="6">
+                            <Col span="6" className={sty.col}>
                                 <img src="http://temp.im/240x160" alt=""/>
                             </Col>
-                            <Col span="6">
+                            <Col span="6" className={sty.col}>
                                 <img src="http://temp.im/240x160" alt=""/>
                             </Col>
                         </Row>
