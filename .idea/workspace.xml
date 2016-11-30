@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e860e96-d28f-4e6d-9d37-f6a361a3a45d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/typeCampaign/CampaignBlock.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/typeCampaign/TypeCampaignList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/typeCampaign/TypeCampaignList.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/TypeCampaign.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yarn.lock" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/interestGroup/CampaignBlock.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/interestGroup/interestGroupList.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/interestGroup/interestGroupList.less" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/interestGroup/CampaignBlock.js" afterPath="$PROJECT_DIR$/src/components/typeCampaign/CampaignBlock.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/.htaccess" afterPath="$PROJECT_DIR$/application/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/autoload.php" afterPath="$PROJECT_DIR$/application/config/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/database.php" afterPath="$PROJECT_DIR$/application/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/common/FilterNav.js" afterPath="$PROJECT_DIR$/src/components/common/FilterNav.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/common/FilterNav.less" afterPath="$PROJECT_DIR$/src/components/common/FilterNav.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/router.js" afterPath="$PROJECT_DIR$/src/router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/typeCampaign/TypeCampaignList.js" afterPath="$PROJECT_DIR$/src/components/typeCampaign/TypeCampaignList.js" />
     </list>
     <ignored path="baiyuReact.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,8 +29,8 @@
       <file leaf-file-name="TypeCampaignList.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/typeCampaign/TypeCampaignList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
+            <state relative-caret-position="375">
+              <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -518,7 +503,7 @@
       <workItem from="1480202238621" duration="368000" />
       <workItem from="1480202738919" duration="155000" />
       <workItem from="1480340353877" duration="2674000" />
-      <workItem from="1480514621140" duration="5682000" />
+      <workItem from="1480514621140" duration="6320000" />
     </task>
     <task id="LOCAL-00001" summary="update interestGroupList">
       <created>1479775861825</created>
@@ -531,7 +516,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28453000" />
+    <option name="totallyTimeSpent" value="29091000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1337" extended-state="6" />
@@ -907,8 +892,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/typeCampaign/TypeCampaignList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
+        <state relative-caret-position="375">
+          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
