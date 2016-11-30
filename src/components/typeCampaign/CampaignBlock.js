@@ -3,30 +3,32 @@ import { Icon } from 'antd';
 import s from './CampaignBlock.less'
 
 class CampaignBlock extends React.Component {
+
     render() {
+        var {block, ...props} = this.props;
         return (
             <div className={s.container}>
-               <img src="http://www.sinaimg.cn/qc/photo_auto/chezhan/2012/54/17/37/101158_src.jpg"/>
-               <img className={s.userImg} src="http://comment.b0.upaiyun.com/system/comments/attachments/023/096/442/original/1419168410-400x365.jpg"/>  
+               <img src={block.campaignImg}/>
+               <img className={s.userImg} src={block.userImg}/>
                <div className={s.title}>
-                    活动标题XXX       
+                   {block.title}
                </div>
                <div className={s.content}>
                     <div>
-                        <span>2016年12月25日</span>-<span>上海浦东新区张江高科</span>
+                        <span>{block.date}</span>-<span>{block.address}</span>
                     </div>
                     <div>
                         <span className={s.price}>
-                            ￥150
+                            {block.price}
                         </span>
                         <span>
-                            <Icon type="share-alt" /> 100
+                            <Icon type="share-alt" /> {block.shareNum}
                         </span>
                         <span>
-                            <Icon type="star-o" /> 100
+                            <Icon type="star-o" /> {block.starNum}
                         </span>
                         <span>
-                            <Icon type="area-chart" /> 100
+                            <Icon type="area-chart" /> {block.viewNum}
                         </span>
                     </div>
                </div>
