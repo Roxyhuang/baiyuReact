@@ -13,17 +13,35 @@
     margin-top: 100px;
 }
 
-.brandActivity h1 {
+.action {
+    padding: 0 5px;
+}
+
+.action h1 {
     margin-bottom: 15px;
     display: inline-block;
 }
 
-.row {
+.action span {
+    line-height: 50px;
+}
 
+.row > div {
+    padding: 0 5px;
 }
 
 .col {
-    padding: 5px;
-    border-top: 1px #ececec solid;
-    border-bottom: 1px #ececec solid;
+    /*padding: 5px;*/
+    /*border-top: 1px #ececec solid;*/
+    /*border-bottom: 1px #ececec solid;*/
+}
+
+.image img {
+    display: block;
+}
+.card {
+    padding: 10px 16px;
+}
+.card p {
+    color: #999;
 }

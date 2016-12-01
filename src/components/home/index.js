@@ -1,6 +1,6 @@
 import React from 'react';
 import sty from './home.css';
-import {Carousel, Form, DatePicker, Input, Button, Select, Row, Col, Card} from 'antd';
+import {Carousel, Form, DatePicker, Input, Button, Select, Row, Col, Card, Icon} from 'antd';
 import classNames from 'classnames';
 import { fetchList } from '../../services/home';
 import { Link } from 'dva/router';
@@ -97,28 +97,61 @@ const Home = Form.create()(React.createClass({
 
                 <div className={sty.container}>
                     <div className={sty.brandActivity}>
-                        <div>
+                        <div className={sty.action}>
                             <h1>品牌活动</h1>
                             <span style={{float: 'right'}}>
                                 <Link>更多</Link>
                             </span>
                         </div>
                         <Row className={sty.row}>
-                            <Col span="6" className={sty.col}>
-                                <img src="http://temp.im/240x160" alt=""/>
-                                <div></div>
+                            <Col span="6">
+                                <Card bodyStyle={{ padding: 0 }}>
+                                    <div className={sty.image}>
+                                        <img alt="example" width="100%" src="http://temp.im/250x160" />
+                                    </div>
+                                    <div className={sty.card}>
+                                        2016年11月30日21:07:27
+                                        <span style={{float: 'right', fontSize: '16px', lineHeight: '16px'}}>
+                                            <Icon type="export" />
+                                            <Icon type="user" />
+                                        </span>
+                                    </div>
+                                </Card>
                             </Col>
-                            <Col span="6" className={sty.col}>
-                                <img src="http://temp.im/240x160" alt=""/>
+                            <Col span="6">
+                                <Card bodyStyle={{ padding: 0 }}>
+                                    <div className={sty.image}>
+                                        <img alt="example" width="100%" src="http://temp.im/250x160" />
+                                    </div>
+                                    <div className={sty.card}>
+                                        2016年11月30日21:07:27
+                                    </div>
+                                </Card>
                             </Col>
-                            <Col span="6" className={sty.col}>
-                                <img src="http://temp.im/240x160" alt=""/>
+                            <Col span="6">
+                                <Card bodyStyle={{ padding: 0 }}>
+                                    <div className={sty.image}>
+                                        <img alt="example" width="100%" src="http://temp.im/250x160" />
+                                    </div>
+                                    <div className={sty.card}>
+                                        2016年11月30日21:07:27
+                                    </div>
+                                </Card>
                             </Col>
-                            <Col span="6" className={sty.col}>
-                                <img src="http://temp.im/240x160" alt=""/>
+                            <Col span="6">
+                                <Card bodyStyle={{ padding: 0 }}>
+                                    <div className={sty.image}>
+                                        <img alt="example" width="100%" src="http://temp.im/250x160" />
+                                    </div>
+                                    <div className={sty.card}>
+                                        2016年11月30日21:07:27
+                                    </div>
+                                </Card>
                             </Col>
                         </Row>
                     </div>
+
+
                 </div>
             </div>
 
