@@ -50,13 +50,13 @@ const Home = Form.create()(React.createClass({
                 {/* Carousel */}
                 <Carousel autoplay dots={false}>
                     <div>
-                        <img width={1280} height={400} src="http://temp.im/1280x400" alt=""/>
+                        <img width='100%' src="http://temp.im/1280x400" alt=""/>
                     </div>
                     <div>
-                        <img src="http://temp.im/1280x400/FF9500/000" alt=""/>
+                        <img width='100%' src="http://temp.im/1280x400/FF9500/000" alt=""/>
                     </div>
                     <div>
-                        <img src="http://temp.im/1280x400/007AFF/fff" alt=""/>
+                        <img width='100%' src="http://temp.im/1280x400/007AFF/fff" alt=""/>
                     </div>
                 </Carousel>
 
@@ -152,6 +152,25 @@ const Home = Form.create()(React.createClass({
                     </div>
 
 
+                    {/* 活动分类 */}
+                    <div className={sty.brandActivity}>
+                        <div className={sty.action}>
+                            <h1>活动分类</h1>
+                            <span style={{float: 'right'}}>
+                                <Link>更多</Link>
+                            </span>
+                        </div>
+
+
+                        <Row className={sty.activityRow}>
+                            <Col span="16">
+                                亲子
+                            </Col>
+                            <Col span="8">
+                                运动
+                            </Col>
+                        </Row>
+                    </div>
                 </div>
             </div>
 

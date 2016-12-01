@@ -45,3 +45,11 @@
 .card p {
     color: #999;
 }
+
+.activityRow {
+}
+
+.activityRow > div {
+    height: 200px;
+    background-color: #ececec;
+}
