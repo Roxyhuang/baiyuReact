@@ -98,7 +98,7 @@ const Home = Form.create()(React.createClass({
                 <div className={sty.container}>
                     <div className={sty.brandActivity}>
                         <div className={sty.action}>
-                            <h1>品牌活动</h1>
+                            <h1>分类活动</h1>
                             <span style={{float: 'right'}}>
                                 <Link>更多</Link>
                             </span>
@@ -155,7 +155,7 @@ const Home = Form.create()(React.createClass({
                     {/* 活动分类 */}
                     <div className={sty.brandActivity}>
                         <div className={sty.action}>
-                            <h1>活动分类</h1>
+                            <h1>活动</h1>
                             <span style={{float: 'right'}}>
                                 <Link>更多</Link>
                             </span>
@@ -168,6 +168,25 @@ const Home = Form.create()(React.createClass({
                             </Col>
                             <Col span="8">
                                 运动
+                            </Col>
+                            <Col span="8">饮食</Col>
+                            <Col span="8">娱乐、社交、赛事</Col>
+                            <Col span="8">课程</Col>
+                            <Col span="16">
+                                商业
+                            </Col>
+                            <Col span="8">
+                                艺术、音乐
+                            </Col>
+                        </Row>
+                    </div>
+
+                    {/*兴趣组*/}
+                    <div>
+                        <h1>社区</h1>
+                        <Row className={sty.activityRow}>
+                            <Col span="24">
+                                亲子
                             </Col>
                         </Row>
                     </div>

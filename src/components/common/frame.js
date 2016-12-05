@@ -2,6 +2,8 @@ import React from 'react';
 import style from './frame.css';
 import { Link } from 'dva/router';
 
+import Footer from './Footer';
+
 
 /**
  * 脚手架
@@ -23,9 +25,8 @@ class Frame extends React.Component {
 
                 {this.props.children}
 
-                <div className="footer">
-                    footer
-                </div>
+
+                <Footer />
             </div>
 
         )

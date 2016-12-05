@@ -52,4 +52,6 @@
 .activityRow > div {
     height: 200px;
     background-color: #ececec;
+    line-height: 200px;
+    text-align: center;
 }
