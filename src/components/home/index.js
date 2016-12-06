@@ -45,8 +45,7 @@ const Home = Form.create()(React.createClass({
             'ant-search-input': true,
         });
         return (
-            <div>
-
+            <div className={sty.main}>
                 {/* Carousel */}
                 <Carousel autoplay dots={false}>
                     <div>
