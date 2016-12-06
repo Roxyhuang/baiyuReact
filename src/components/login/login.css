@@ -1,0 +1,14 @@
+.button{
+	display: inline-block;
+	width: 50px;
+}
+.container{
+	margin-top: 50px;
+}
+.tab{
+	margin-left: 25px;
+	font-size: 40px;
+}
+.ant-select-selection-selected-value {
+  width: 70px;
+}
