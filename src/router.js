@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {Router, Route, IndexRoute} from 'dva/router';
 
 import Frame from './components/common/frame';
-import Home from './components/home';
+import Home from './components/home/home';
 import Login from './components/login';
 import TypeCampaignList from './components/typeCampaign/TypeCampaignList'
 

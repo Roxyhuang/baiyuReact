@@ -16,16 +16,16 @@ require APPPATH . '/libraries/REST_Controller.php';
  * Home Api
  */
 class Home extends REST_Controller {
-    const TABLE_SALES = 'b1_sales_summary';
-    const TABLE_STORE = 'basic_daily_sales';
+    const TABLE = 'b1_sales_summary';
 
-    private $date;
     public function fetchList_get() {
-        $this->date = $this->get('date');
+        $date = $this->get('date');
+        $cate = $this->get('cate');
+        $city = $this->get('city');
+        $keyword = $this->get('keyword');
 
         $this->dataFormat();
     }
-
 
     //
     private function _getData() {
@@ -40,11 +40,11 @@ class Home extends REST_Controller {
         return $array;
     }
 
-    private function _createWhere() {
+    private function _createWhere($date) {
         $sql = '';
 
-        if ($this->date) {
-            $sql .= ' and stock_dt = ' . date('Ymd', strtotime($this->date));
+        if ($date) {
+            $sql .= ' and stock_dt = ' . date('Ymd', strtotime($date));
         }
 
         return $sql;
