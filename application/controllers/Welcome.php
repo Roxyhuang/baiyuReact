@@ -20,6 +20,9 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$str = "pl081299";
+
+		echo md5(sha1($str));
+		// $this->load->view('welcome_message');
 	}
 }

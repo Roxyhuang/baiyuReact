@@ -1,30 +1,39 @@
-import fetch from 'dva/fetch';
+import axios from "axios";
+import {parse, stringify} from "qs";
 
-function parseJSON(response) {
-  return response.json();
+function handleError() {
+
 }
 
-function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
-    return response;
-  }
-
-  const error = new Error(response.statusText);
-  error.response = response;
-  throw error;
+function get(url, params) {
+    return axios.get(url, {
+        params: parse(params)
+    }).then((response) => {
+        if (response && response.data) {
+            // auth(response.data);
+            return response.data;
+        } else {
+            handleError()
+        }
+    }).then((res) => res).catch((error) => {
+        console.error(error)
+    })
 }
 
-/**
- * Requests a URL, returning a promise.
- *
- * @param  {string} url       The URL we want to request
- * @param  {object} [options] The options we want to pass to "fetch"
- * @return {object}           An object containing either "data" or "err"
- */
-export default function request(url, options) {
-  return fetch(url, options)
-    .then(checkStatus)
-    .then(parseJSON)
-    .then((data) => ({ data }))
-    .catch((err) => ({ err }));
+function post(url, params) {
+    return axios.post(url, stringify(params)).then((response) => {
+        if (response && response.data) {
+            // auth(response.data);
+            return response.data;
+        } else {
+            handleError();
+        }
+    }).then((res) => res).catch((error) => {
+        console.error(error)
+    })
+}
+
+export {
+    get,
+    post
 }

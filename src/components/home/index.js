@@ -33,7 +33,6 @@ const Home = Form.create()(React.createClass({
         fetchList(this.state.form, res => {
            console.log(res)
         });
-        // this.props.dispatch({ type: 'home/search', payload: {data: this.state.form}});
     },
 
     render() {
