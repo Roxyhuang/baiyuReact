@@ -37,7 +37,7 @@ class MY_Auth_Controller extends CI_Controller
 
         if ($this->session->user) {
             $this->_data['valid'] = true;
-            $this->_data['state'] = $this->session->user['state'];
+            $this->_data['status'] = $this->session->user['status'];
         } else {
             $this->_data['valid'] = false;
             $this->_data['msg'] = '暂未登陆';
