@@ -1,6 +1,7 @@
-.main{
+.main {
     padding-bottom: 48px;
 }
+
 .searchBar {
     margin-top: -50px;
     margin-bottom: 15px;
@@ -41,9 +42,27 @@
 .image img {
     display: block;
 }
+
+.iconLayer i {
+    transition: all .3s cubic-bezier(.18, .89, .32, 1.28);
+}
+
+.iconLayer i:hover {
+    transform: scale(2);
+}
+
+.iconLayer i:active {
+    transform: scale(2);
+}
+
 .card {
     padding: 10px 16px;
 }
+
+.card i {
+    cursor: pointer;
+}
+
 .card p {
     color: #999;
 }
@@ -56,4 +75,109 @@
     background-color: #ececec;
     line-height: 200px;
     text-align: center;
+}
+
+.list1 {
+    background: url("../../assets/banner.jpeg");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 500px;
+}
+
+.list2 {
+    background: url("../../assets/banner1.jpeg");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 500px;
+}
+
+.list3 {
+    background: url("../../assets/banner2.jpeg");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 500px;
+}
+
+.children {
+    background: url("../../assets/family.jpeg");
+    background-size: 100% 100%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sport {
+    background: url("../../assets/sport.jpeg");
+    background-size: 100% 100%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.food {
+    background: url("../../assets/food.jpeg");
+    background-size: 100% 100%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.play {
+    background: url("../../assets/art.jpeg");
+    background-size: 100% 100%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.course {
+    background: url("../../assets/course.jpeg");
+    background-size: 100% 100%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.comm {
+    background: url("../../assets/bz.jpeg");
+    background-size: 100% 100%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.children a {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: inline-block !important;
+}
+
+.sport a {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: inline-block !important;
+}
+
+.food a {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: inline-block !important;
+}
+
+.play a {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: inline-block !important;
+}
+
+.course a {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: inline-block !important;
+}
+
+.comm a {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
 }

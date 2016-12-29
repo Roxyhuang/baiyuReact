@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form,Icon,Tabs,Input,Button,Row,Col,Select,Upload } from 'antd';
+import { Form,Icon,Tabs,Input,Button,Row,Col,Select,Upload,Checkbox } from 'antd';
 import sty from './login.css';
 import classNames from 'classnames';
 const TabPane = Tabs.TabPane;
@@ -111,11 +111,13 @@ const Login  = Form.create()(React.createClass({
             						<Input type='password'  />
           						)}
           					</FormItem>
-          					<FormItem {...tailFormItemLayout} style={{ marginBottom: 8 }}>
-          						{getFieldDecorator('agreement')(
-            						<Row gutter={8}>注册即表示同意百愚网的<a>服务条款</a>及<a>隐私政策</a></Row>
-          						)}
-        					</FormItem>
+							<FormItem {...tailFormItemLayout} style={{ marginBottom: 8 }}>
+								{getFieldDecorator('agreement', {
+									valuePropName: 'checked',
+								})(
+									<Checkbox>我已经阅读 <a>隐私条款</a></Checkbox>
+								)}
+							</FormItem>
         					<FormItem {...tailFormItemLayout}>
           						<Button type="primary" htmlType="submit" size="large">注册</Button>
         					</FormItem>			

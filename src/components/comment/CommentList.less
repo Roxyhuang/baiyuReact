@@ -1,0 +1,41 @@
+.container {
+  margin-bottom: 12px;
+}
+
+.userImg {
+  background: url("../../assets/bz.jpeg");
+  background-size: 60px 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+}
+
+.content {
+  padding-top: 6px;
+  margin-left: 30px;
+  & div {
+    width: 980px;
+  }
+}
+
+.msg {
+  margin-top: 6px;
+}
+
+.panel {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -24px;
+  & i {
+    font-size: 16px;
+    margin-left: 16px;
+    transition: all .3s cubic-bezier(.18, .89, .32, 1.28);
+    cursor: pointer;
+    &:hover {
+      transform: scale(2);
+    }
+    &:active {
+      transform: scale(2);
+    }
+  }
+}

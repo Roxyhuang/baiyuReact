@@ -13,6 +13,10 @@
     font-size: 25px;
 }
 
+.title a{
+    color: #fff;
+}
+
 .menuAction {
     float: right;
     color: white;
@@ -21,4 +25,14 @@
 .menuAction span {
     cursor: pointer;
     margin: 0 5px;
+}
+.weixinIcon {
+    background: url(../../assets/wechat.png);
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+    cursor: pointer;
+}
+.create a{
+    color: #fff;
 }

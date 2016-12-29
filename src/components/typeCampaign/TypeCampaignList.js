@@ -39,7 +39,7 @@ class TypeCampaignList extends React.Component {
             },
             pageConfig:{
                 defaultCurrent:1,
-                total:1000
+                total:1
             }
         }
         ;
