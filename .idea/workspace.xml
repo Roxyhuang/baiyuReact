@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e860e96-d28f-4e6d-9d37-f6a361a3a45d" name="Default" comment="update interestGroupList">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="6e860e96-d28f-4e6d-9d37-f6a361a3a45d" name="Default" comment="update interestGroupList" />
     <ignored path="baiyuReact.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -398,7 +396,7 @@
       <workItem from="1482847174119" duration="553000" />
       <workItem from="1483019708469" duration="4666000" />
       <workItem from="1483117334270" duration="5138000" />
-      <workItem from="1483150790333" duration="2083000" />
+      <workItem from="1483150790333" duration="2549000" />
     </task>
     <task id="LOCAL-00001" summary="update interestGroupList">
       <created>1479775861825</created>
@@ -411,7 +409,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65459000" />
+    <option name="totallyTimeSpent" value="65925000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
