@@ -1,16 +1,22 @@
 import pathToRegexp from 'path-to-regexp';
 
-import {fetchList} from '../services/home';
+import {fetchList,getBrandCampaignList} from '../services/home';
 
 export default {
   namespace: 'home',
   state: {
+    isFetching: false,
+    exception: null,
+    typeCampaign: {},
+    brandCampaign: {},
+    appCampaign: {},
 
   },
   reducers: {
     changeDate (state, {payload: dateString}) {
       return {...state, date: dateString}
     }
+
   },
   effects: {
     *search({payload}, {call}) {

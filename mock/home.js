@@ -16,6 +16,25 @@ module.exports = {
             });
         }, 500);
     },
-    
+    'GET /api/home/brandCampaignList': function (req, res) {
+        setTimeout(function () {
+            res.json({
+                "username": null,
+                "valid": false,
+                "msg": "已登录",
+                "flag": true,
+                "data": [
+                    {
+                    name: '小王',
+                    address: 1231312
+                    },
+                    {
+                      name:'小明',
+                      address:'上海市中山路',
+                    }
+                ]
+            });
+        }, 500);
+    },
 
 };

@@ -38,6 +38,14 @@ const mapDispatchToProps = dispatch => ({
 
 class Home extends React.Component {
 
+    static propTypes = {
+
+    };
+
+    static defaultProps = {
+
+    };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -57,7 +65,9 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-
+      getBrandCampaignList().then(data => {
+          console.log(data);
+      });
   }
 
   componentWillReceiveProps(nextProps) {

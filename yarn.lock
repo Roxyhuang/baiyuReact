@@ -3169,6 +3169,10 @@ mocha@^3.0.0-2:
     mkdirp "0.5.1"
     supports-color "3.1.2"
 
+moment@^2.17.1:
+  version "2.17.1"
+  resolved "http://registry.npm.taobao.org/moment/download/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
+
 moment@~2.15.1, moment@2.x:
   version "2.15.2"
   resolved "http://registry.npm.taobao.org/moment/download/moment-2.15.2.tgz#1bfdedf6a6e345f322fe956d5df5bd08a8ce84dc"
@@ -3910,13 +3914,13 @@ qrcode-npm@0.0.3:
   version "0.0.3"
   resolved "http://registry.npm.taobao.org/qrcode-npm/download/qrcode-npm-0.0.3.tgz#77ee6fbefa9c0f29fa09d4d1520807c6a6042b9a"
 
+qs@^6.3.0, qs@~6.3.0:
+  version "6.3.0"
+  resolved "http://registry.npm.taobao.org/qs/download/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
+
 qs@~6.0.1:
   version "6.0.2"
   resolved "http://registry.npm.taobao.org/qs/download/qs-6.0.2.tgz#88c68d590e8ed56c76c79f352c17b982466abfcd"
-
-qs@~6.3.0:
-  version "6.3.0"
-  resolved "http://registry.npm.taobao.org/qs/download/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
 
 query-string@^3.0.0:
   version "3.0.3"

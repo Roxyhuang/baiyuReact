@@ -4,6 +4,9 @@ export async function fetchList(params) {
   return get('/api/home/fetchList', params);
 }
 
+export async function getBrandCampaignList(params) {
+    return get('/api/home/brandCampaignList', params);
+}
 
 //
 // import axios from 'axios';

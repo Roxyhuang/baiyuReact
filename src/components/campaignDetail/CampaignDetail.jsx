@@ -23,6 +23,12 @@ const mapDispatchToProps = (dispatch) => {
 // });
 
 class CampaignDetail extends React.Component {
+
+    static defaultProps = {
+
+    };
+
+
     constructor(props) {
         super(props);
         this.state = {
@@ -61,11 +67,13 @@ class CampaignDetail extends React.Component {
             }
         });
     }
+
     like() {
         this.setState({
             like: true
         })
     }
+
     unLike() {
         this.setState({
             like: false
@@ -73,17 +81,20 @@ class CampaignDetail extends React.Component {
     }
 
     info() {
-    Modal.confirm({
-        title: '确认要参加该活动吗',
-        content: (
-            <div>
-                <p>确认要参加该活动吗</p>
-            </div>
-        ),
-        onOk() {},
-        onCanel() {},
-    });
-}
+        Modal.confirm({
+            title: '确认要参加该活动吗',
+            content: (
+                <div>
+                    <p>确认要参加该活动吗</p>
+                </div>
+            ),
+            onOk() {
+            },
+            onCanel() {
+            },
+        });
+    }
+
     render() {
         return (
             <div className={sty.main}>
@@ -117,13 +128,15 @@ class CampaignDetail extends React.Component {
                         <Col>
                             <Row type="flex">
                                 <Col>
-                                    <div className={sty.share}><Icon type="share-alt" onClick={() =>this.modalSuccess() } /></div>
+                                    <div className={sty.share}><Icon type="share-alt"
+                                                                     onClick={() => this.modalSuccess() } /></div>
                                 </Col>
                                 <Col>
                                     <div className={sty.inst}>
                                         {
-                                           this.state.like ?<Icon type="heart" onClick={ () => this.unLike() }  />: <Icon type="heart-o" onClick={ () => this.like() }/>
-                                    }
+                                            this.state.like ? <Icon type="heart" onClick={ () => this.unLike() } /> :
+                                                <Icon type="heart-o" onClick={ () => this.like() } />
+                                        }
 
                                     </div>
                                 </Col>
