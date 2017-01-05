@@ -68,3 +68,6 @@ Lockfile:
 
 Trace: 
   Error: http://registry.npm.taobao.org/debug/download/debug-2.3.3.tgz: ENOENT: no such file or directory, open '/Users/Neo/.yarn-cache/npm-debug-2.3.3/.yarn-tarball.tgz'
+
+
+this is a test
