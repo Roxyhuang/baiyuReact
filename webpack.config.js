@@ -5,7 +5,7 @@ module.exports = function(webpackConfig, env) {
 
   webpackConfig.babel.plugins.push(['import', {
     libraryName: 'antd',
-    style: 'css',
+    style: true
   }]);
 
   // Support hmr

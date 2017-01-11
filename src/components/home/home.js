@@ -65,9 +65,6 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-      getBrandCampaignList().then(data => {
-          console.log(data);
-      });
   }
 
   componentWillReceiveProps(nextProps) {
