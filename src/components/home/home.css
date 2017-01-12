@@ -3,8 +3,8 @@
 }
 
 .searchBar {
-    margin-top: -50px;
-    margin-bottom: 15px;
+    margin-top: -300px;
+    margin-bottom: 392px;
 }
 
 .container {
@@ -81,21 +81,21 @@
     background: url("../../assets/banner.jpeg");
     background-size: 100% 100%;
     width: 100%;
-    height: 500px;
+    height: 900px;
 }
 
 .list2 {
     background: url("../../assets/banner1.jpeg");
     background-size: 100% 100%;
     width: 100%;
-    height: 500px;
+    height: 900px;
 }
 
 .list3 {
     background: url("../../assets/banner2.jpeg");
     background-size: 100% 100%;
     width: 100%;
-    height: 500px;
+    height: 900px;
 }
 
 .children {
@@ -180,4 +180,18 @@
     width: 100%;
     height: 100%;
     display: inline-block;
+}
+
+
+:global(.ant-select-arrow) {
+    color: #000!important;
+}
+
+:global(.ant-calendar-picker-icon:after) {
+    color: #000 !important;
+}
+
+
+:global(.ant-select-selection__placeholder) {
+    color: #000 !important;
 }

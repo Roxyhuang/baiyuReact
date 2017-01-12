@@ -1,0 +1,36 @@
+@import "../public/Default";
+
+.container {
+  height: 90px;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 51px;
+  width: 141px;
+  margin: 19px 0 20px 30px;
+  background: url("../../assets/home/logo.png");
+  cursor: pointer;
+}
+
+.menuAction {
+  font-size: 22px;
+  color: @font-shadow-font-color;
+  :hover{
+    color: #fea733;
+  }
+  :last-child {
+    margin-right: 30px;
+  }
+  span {
+    margin-right: 60px;
+  }
+  a {
+    color: @font-shadow-font-color;
+  }
+
+}

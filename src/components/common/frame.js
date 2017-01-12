@@ -3,6 +3,7 @@ import { Modal, Button, Form, Icon, Input, Checkbox, Row, Col } from  'antd'
 import style from './frame.css';
 import { Link } from 'dva/router';
 
+import Header from './Header';
 import Footer from './Footer';
 
 const FormItem = Form.Item;
@@ -48,21 +49,20 @@ class Frame extends React.Component {
         const { getFieldDecorator } = this.props.form;
         return (
             <div className="wrap">
-                <div className={style.layoutHeader}>
-                    <div className={style.logo}></div>
-                    <div className={style.title}><Link to="/">百愚网</Link></div>
-                    <div className={style.menuAction}>
-                        <span className={style.create}><Link to="/createCampaign" >发布活动</Link></span> |
-                        <span><Link to='/register'>注册</Link></span> |
-                        <span onClick={()=> {
-                            this.showLoginModal();
-                        }}>登录</span> |
-                        <span>帮助</span>
-                    </div>
-                </div>
-
+                {/*<div className={style.layoutHeader}>*/}
+                    {/*<div className={style.logo}></div>*/}
+                    {/*<div className={style.title}><Link to="/">百愚网</Link></div>*/}
+                    {/*<div className={style.menuAction}>*/}
+                        {/*<span className={style.create}><Link to="/createCampaign" >发布活动</Link></span> |*/}
+                        {/*<span><Link to='/register'>注册</Link></span> |*/}
+                        {/*<span onClick={()=> {*/}
+                            {/*this.showLoginModal();*/}
+                        {/*}}>登录</span> |*/}
+                        {/*<span>帮助</span>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+                <Header/>
                 {this.props.children}
-
 
                 <Footer />
                 <Modal

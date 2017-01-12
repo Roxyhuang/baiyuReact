@@ -26,25 +26,20 @@ const FormItem = Form.Item;
 const Option = Select.Option;
 const InputGroup = Input.Group;
 
-function mapStateToProps(state) {
-  //TODO
-}
+const mapStateToProps = state => ({
+  home: state.home,
+});
 
 const mapDispatchToProps = dispatch => ({
   //TODO
 });
 
 
-
 class Home extends React.Component {
 
-    static propTypes = {
+  static propTypes = {};
 
-    };
-
-    static defaultProps = {
-
-    };
+  static defaultProps = {};
 
   constructor(props) {
     super(props);
@@ -180,6 +175,7 @@ class Home extends React.Component {
   }
 
   render() {
+    const brandCampaignList = this.props.home.brandCampaign || {};
     const btnCls = classNames({
       'ant-search-btn': true,
       'ant-search-btn-noempty': !!this.state.form.keyword.trim(),
@@ -394,7 +390,7 @@ class Home extends React.Component {
 
 
           <div>
-            <h1>组局活动</h1>
+            <h1>兴趣组</h1>
             <Row className={sty.activityRow}>
               <Col span="24">
                 组局

@@ -17,7 +17,7 @@ export default {
       return { ...state, date: dateString }
     },
     getBrand(state, { payload:{ data:brandCampaign } }){
-      return { ...state, brandCampaign};
+      return { ...state, brandCampaign:brandCampaign.data };
     }
 
   },
@@ -26,8 +26,8 @@ export default {
     //   let { data } = payload;
     //   yield call(homeService.fetchList, data);
     // },
-    *fetchBrand({payload},{ call, put }) {
-      const { data } = yield call(getBrandCampaignList);
+    *fetchBrand({ payload },{ call, put }) {
+      const  data  = yield call(getBrandCampaignList);
       yield put({ type: 'getBrand', payload: { data } });
     },
   },

@@ -7,7 +7,7 @@ function get(url, params) {
         params: parse(params)
     }).then((response) => {
         if (response && response.data) {
-            auth(response.data);
+            // auth(response.data);
             return response.data;
         }
     }).then((res) => res).catch((error) => {
@@ -18,7 +18,7 @@ function get(url, params) {
 function post(url, params) {
     return axios.post(url, stringify(params)).then((response) => {
         if (response && response.data) {
-            auth(response.data);
+            // auth(response.data);
             return response.data;
         }
     }).then((res) => res).catch((error) => {
@@ -31,7 +31,7 @@ function del(url, params) {
         params: parse(params)
     }).then(response => {
         if (response && response.data) {
-            auth(response.data);
+            // auth(response.data);
             return response.data;
         }
     }).then((res) => res).catch((error) => {
@@ -42,8 +42,8 @@ function del(url, params) {
 function put(url, params) {
     return axios.put(url, stringify(params)).then((response) => {
         if (response && response.data) {
-            auth(response.data);
-            return response.data;
+            // auth(response.data);
+            return response.data;npm
         }
     }).then((res) => res).catch((error) => {
         console.error(error)
