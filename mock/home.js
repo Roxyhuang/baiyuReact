@@ -2,39 +2,60 @@
 
 module.exports = {
 
-    'GET /api/home/fetchList': function (req, res) {
-        setTimeout(function () {
-            res.json({
-                "username": null,
-                "valid": false,
-                "msg": "暂未登陆",
-                "flag": true,
-                "data": [{
-                    asdad: 123123123,
-                    vvvv: 1231312
-                }]
-            });
-        }, 500);
-    },
-    'GET /api/home/brandCampaignList': function (req, res) {
-        setTimeout(function () {
-            res.json({
-                "username": null,
-                "valid": false,
-                "msg": "已登录",
-                "flag": true,
-                "data": [
-                    {
-                    name: '小王',
-                    address: 1231312
-                    },
-                    {
-                      name:'小明',
-                      address:'上海市中山路',
-                    }
-                ]
-            });
-        }, 500);
-    },
+  'GET /api/home/brandCampaignList': function (req, res) {
+    setTimeout(function () {
+      res.json({
+        "username": null,
+        "valid": false,
+        "msg": "已登录",
+        "flag": true,
+        "data": [
+          {
+            BrandId: 1,
+            BrandName: '东风日产线下活动--上海',
+            BrandLogo: 'http://img2.shucar.com/upfiles/thumb/2012-04-11/5/573193813810.jpg',
+            ActivityAddress: '北京',
+            ActivityTime: "1999-11-23",
+          },
+          {
+            BrandId: 2,
+            BrandName: 'http://img2.shucar.com/upfiles/thumb/2012-04-11/5/573193813810.jpg',
+            BrandLogo: '东风日产线下活动--北京',
+            ActivityAddress: '上海',
+            ActivityTime: "1999-11-24",
+          }
+        ]
+      });
+    }, 500);
+  },
 
+  'GET /api/home/fetchTypeList': function (req, res) {
+    setTimeout(function () {
+      res.json({
+        "username": null,
+        "valid": false,
+        "msg": "已登录",
+        "flag": true,
+        "data": [
+          { typeId: "0", city: "亲自" },
+          { typeId: "1", city: "运动" },
+        ]
+      });
+    }, 500);
+  },
+
+  'GET /api/home/cityList': function (req, res) {
+    setTimeout(function () {
+      res.json({
+        "username": null,
+        "valid": false,
+        "msg": "已登录",
+        "flag": true,
+        "data": [
+          { code: "0", city: "北京" },
+          { code: "021", city: "广州" },
+        ]
+      });
+    }, 500);
+  },
 };

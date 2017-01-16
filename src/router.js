@@ -4,6 +4,7 @@ import {Router, Route, IndexRoute} from 'dva/router';
 import Frame from './components/common/frame';
 import Home from './components/home/home';
 import Register from './components/register';
+import Login from './components/login/login';
 import TypeCampaignList from './components/typeCampaign/TypeCampaignList';
 import CampaignDetail from './components/campaignDetail/CampaignDetail';
 import Search from './components/search/Search';
@@ -17,6 +18,7 @@ export default function ({history}) {
                 <Route path="/home" component={Home}/>
                 <Route path="/typeCampaignList" component={TypeCampaignList}/>
                 <Route path="/register" components={Register}></Route>
+                <Route path="/login" components={Login}></Route>
                 <Route path="/detail" components={CampaignDetail}></Route>
                 <Route path="/search" components={Search}></Route>
                 <Route path="/createCampaign" components={CreateCampaign}></Route>

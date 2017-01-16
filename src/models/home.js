@@ -1,34 +1,44 @@
 import pathToRegexp from 'path-to-regexp';
 
-import {getBrandCampaignList} from '../services/home';
+import {getBrandCampaignList,fetchTypeList,fetchCityList} from '../services/home';
 
 export default {
   namespace: 'home',
   state: {
     isFetching: false,
     exception: null,
-    typeCampaign: {},
-    brandCampaign: {},
-    appCampaign: {},
+    brandCampaignList: {},
+    cityList: {},
+    typeList: {},
 
   },
   reducers: {
     changeDate (state, { payload: dateString }) {
       return { ...state, date: dateString }
     },
-    getBrand(state, { payload:{ data:brandCampaign } }){
-      return { ...state, brandCampaign:brandCampaign.data };
-    }
+    getBrandList(state, { payload:{ data:content } }){
+      return { ...state, brandCampaignList:content.data };
+    },
+    getTypeList(state, { payload:{ data:content } }){
+      return { ...state, typeList:content.data };
+    },
+    getCityList(state, { payload:{ data:content } }){
+      return { ...state, cityList:content.data };
+    },
 
   },
   effects: {
-    // *search({ payload }, { call }) {
-    //   let { data } = payload;
-    //   yield call(homeService.fetchList, data);
-    // },
     *fetchBrand({ payload },{ call, put }) {
       const  data  = yield call(getBrandCampaignList);
-      yield put({ type: 'getBrand', payload: { data } });
+      yield put({ type: 'getBrandList', payload: { data } });
+    },
+    *fetchTypeList({ payload },{ call, put }) {
+      const  data  = yield call(fetchTypeList);
+      yield put({ type: 'getTypeList', payload: { data } });
+    },
+    *fetchCityList({ payload },{ call, put }) {
+      const  data  = yield call(fetchCityList);
+      yield put({ type: 'getCityList', payload: { data } });
     },
   },
   subscriptions: {
@@ -36,6 +46,8 @@ export default {
        history.listen(({ pathname, query }) => {
         if (pathname === '/') {
           dispatch({ type: 'fetchBrand'});
+          dispatch({type:'fetchTypeList'});
+          dispatch({type:'fetchCityList'});
         }
       });
     },

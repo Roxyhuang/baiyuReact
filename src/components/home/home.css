@@ -17,7 +17,12 @@
 }
 
 .action {
+    position: relative;
     padding: 0 5px;
+    text-align: center;
+    font-size: 30px !important;
+    color: #000;
+    margin-bottom: 30px;
 }
 
 .action h1 {
@@ -30,7 +35,43 @@
 }
 
 .row > div {
-    padding: 0 5px;
+    margin-right: 26px;
+    height: 220px;
+    width: 300px;
+}
+
+.row > div:last-child {
+    margin-right: 0px;
+}
+
+.row > div > div {
+    border: 0;
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    background: rgba(0,0,0,.5);
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #fff;
+    padding: 6px 12px 0;
+}
+
+.content .logo {
+    width: 32px;
+    height: 32px;
+    background: url("../../assets/home/bmwlogo.png");
+    opacity: 1;
+    z-index: 9;
+    position: relative;
+}
+
+.content .price {
+    position: relative;
 }
 
 .col {
@@ -39,8 +80,12 @@
     /*border-bottom: 1px #ececec solid;*/
 }
 
-.image img {
+.image {
     display: block;
+    background: url("../../assets/home/car.jpg");
+    width: 300px;
+    height: 192px;
+    cursor: pointer;
 }
 
 .iconLayer i {
@@ -64,80 +109,121 @@
 }
 
 .card p {
-    color: #999;
+    color: #7d7d7d;
 }
 
 .activityRow {
+    margin-bottom: 27px;
 }
 
 .activityRow > div {
-    height: 200px;
+    height: 261px;
     background-color: #ececec;
-    line-height: 200px;
+    line-height: 261px;
     text-align: center;
+    font-size: 40px;
+    margin-right: 27px;
+}
+
+.activityRow > div:last-child {
+    margin-right: 0;
 }
 
 .list1 {
-    background: url("../../assets/banner.jpeg");
+    background: url("../../assets/home/banner.jpg");
     background-size: 100% 100%;
     width: 100%;
     height: 900px;
 }
 
 .list2 {
-    background: url("../../assets/banner1.jpeg");
+    background: url("../../assets/home/banner.jpg");
     background-size: 100% 100%;
     width: 100%;
     height: 900px;
 }
 
 .list3 {
-    background: url("../../assets/banner2.jpeg");
+    background: url("../../assets/home/banner.jpg");
     background-size: 100% 100%;
     width: 100%;
     height: 900px;
 }
 
 .children {
-    background: url("../../assets/family.jpeg");
+    background: url("../../assets/home/family.jpg");
     background-size: 100% 100%;
     font-size: 24px;
     cursor: pointer;
+    width: 844px;
 }
 
 .sport {
-    background: url("../../assets/sport.jpeg");
+    background: url("../../assets/home/sport.jpg");
     background-size: 100% 100%;
     font-size: 24px;
     cursor: pointer;
+    width: 409px;
 }
 
 .food {
-    background: url("../../assets/food.jpeg");
+    background: url("../../assets/home/food.jpg");
     background-size: 100% 100%;
     font-size: 24px;
     cursor: pointer;
+    width: 409px;
 }
 
 .play {
-    background: url("../../assets/art.jpeg");
+    background: url("../../assets/home/play.jpg");
     background-size: 100% 100%;
     font-size: 24px;
     cursor: pointer;
+    width: 409px;
 }
 
 .course {
-    background: url("../../assets/course.jpeg");
+    background: url("../../assets/home/course.jpg");
+    background-size: 100% 100%;
+    font-size: 24px;
+    cursor: pointer;
+    width: 408px;
+}
+
+.comm {
+    background: url("../../assets/home/bz.jpg");
+    background-size: 100% 100%;
+    font-size: 24px;
+    cursor: pointer;
+    width: 844px;
+}
+
+.art {
+    background: url("../../assets/home/art.jpg");
+    background-size: 100% 100%;
+    font-size: 24px;
+    cursor: pointer;
+    width: 409px;
+}
+
+
+.inst {
+    background: url("../../assets/home/inst.jpg");
     background-size: 100% 100%;
     font-size: 24px;
     cursor: pointer;
 }
-
-.comm {
-    background: url("../../assets/bz.jpeg");
-    background-size: 100% 100%;
-    font-size: 24px;
-    cursor: pointer;
+.mask{
+    background: #000;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.mask:hover{
+    opacity: .5;
+    width: 100%;
+    height: 100%;
 }
 
 .children a {
@@ -182,16 +268,48 @@
     display: inline-block;
 }
 
+.inst a{
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.more {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.more a {
+    color: #7d7d7d;
+    font-size: 18px;
+}
+
+.art a {
+    color: #fff;
+}
+
+.more :hover {
+    color: #fea733;
+}
 
 :global(.ant-select-arrow) {
-    color: #000!important;
+    color: #000 !important;
 }
 
 :global(.ant-calendar-picker-icon:after) {
     color: #000 !important;
 }
 
-
 :global(.ant-select-selection__placeholder) {
     color: #000 !important;
+}
+
+.text{
+    position: absolute;
+    font-size: 14px;
+    bottom: 44px;
+    left: 10px;
+    color: #fff;
 }

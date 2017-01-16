@@ -243,94 +243,143 @@ class Home extends React.Component {
         <div className={sty.container}>
           <div className={sty.brandActivity}>
             <div className={sty.action}>
-              <h1 onClick={()=>this.openNotificationWithIcon('error')}>品牌活动</h1>
-              <span style={{ float: 'right' }}>
-                               <Link to="typeCampaignList">更多</Link>
-                            </span>
+              品牌活动
+              <div style={{ textAlign: 'right' }} className={sty.more}>
+                <Link to="typeCampaignList">更多</Link>
+              </div>
             </div>
+
             <Row className={sty.row}>
               <Col span="6">
-                <Card bodyStyle={{ padding: 0 }}>
+                <Card bodyStyle={{ padding: 0}}>
+                  <div className={sty.content}>
+                    <div className={sty.logo}>
+
+                    </div>
+                    <div className={sty.price}>
+                      ￥399
+                    </div>
+                  </div>
                   <div className={sty.image}>
-                    <img alt="example" width="100%" src="http://temp.im/250x160" />
+
+                  </div>
+                  <div className={sty.text}>
+                    <div>北京</div>
+                    <div>宝马活动真车体验</div>
                   </div>
                   <div className={sty.card}>
                     2016年11月30日21:07:27
-                    <span style={{ float: 'right', fontSize: '16px', lineHeight: '16px' }}>
-                                            <Row gutter={12}>
-                                                <Icon type="export" onClick={() =>this.modalSuccess() } />
-                                              {
-                                                this.state.like.item1 ?
-                                                  <Icon type="star" onClick={() => this.toggleUnLike(1) } /> :
-                                                  <Icon type="star-o" onClick={() => this.toggleLike(1) } />
-                                              }
+                    {/*<span style={{ float: 'right', fontSize: '16px', lineHeight: '16px' }}>*/}
+                                            {/*<Row gutter={12}>*/}
+                                                {/*<Icon type="export" onClick={() =>this.modalSuccess() } />*/}
+                                              {/*{*/}
+                                                {/*this.state.like.item1 ?*/}
+                                                  {/*<Icon type="star" onClick={() => this.toggleUnLike(1) } /> :*/}
+                                                  {/*<Icon type="star-o" onClick={() => this.toggleLike(1) } />*/}
+                                              {/*}*/}
 
-                                            </Row>
+                                            {/*</Row>*/}
+                                        {/*</span>*/}
+                  </div>
+                </Card>
+              </Col>
+              <Col span="6">
+                <Card bodyStyle={{ padding: 0 }}>
+                  <div className={sty.content}>
+                    <div className={sty.logo}>
+
+                    </div>
+                    <div className={sty.price}>
+                      ￥399
+                    </div>
+                  </div>
+                  <div className={sty.image}>
+
+                  </div>
+                  <div className={sty.text}>
+                    <div>北京</div>
+                    <div>宝马活动真车体验</div>
+                  </div>
+                  <div className={sty.card}>
+                    2016年11月30日21:07:27
+                    <span style={{ float: 'right', fontSize: '16px', lineHeight: '16px' }}
+                          className={sty.iconLayer}>
+                                            {/*<Row gutter={12}>*/}
+                                                {/*<Icon type="export" onClick={() =>this.modalSuccess() } />*/}
+                                              {/*{*/}
+                                                {/*this.state.like.item2 ?*/}
+                                                  {/*<Icon type="star" onClick={() => this.toggleUnLike(2) } /> :*/}
+                                                  {/*<Icon type="star-o" onClick={() => this.toggleLike(2) } />*/}
+                                              {/*}*/}
+                                            {/*</Row>*/}
                                         </span>
                   </div>
                 </Card>
               </Col>
               <Col span="6">
                 <Card bodyStyle={{ padding: 0 }}>
+                  <div className={sty.content}>
+                    <div className={sty.logo}>
+
+                    </div>
+                    <div className={sty.price}>
+                      ￥399
+                    </div>
+                  </div>
                   <div className={sty.image}>
-                    <img alt="example" width="100%" src="http://temp.im/250x160" />
+
+                  </div>
+                  <div className={sty.text}>
+                    <div>北京</div>
+                    <div>宝马活动真车体验</div>
                   </div>
                   <div className={sty.card}>
                     2016年11月30日21:07:27
                     <span style={{ float: 'right', fontSize: '16px', lineHeight: '16px' }}
                           className={sty.iconLayer}>
-                                            <Row gutter={12}>
-                                                <Icon type="export" onClick={() =>this.modalSuccess() } />
-                                              {
-                                                this.state.like.item2 ?
-                                                  <Icon type="star" onClick={() => this.toggleUnLike(2) } /> :
-                                                  <Icon type="star-o" onClick={() => this.toggleLike(2) } />
-                                              }
-                                            </Row>
+                                            {/*<Row gutter={12}>*/}
+                                                 {/*<Icon type="export" onClick={() =>this.modalSuccess() } />*/}
+
+                                              {/*{*/}
+                                                {/*this.state.like.item3 ?*/}
+                                                  {/*<Icon type="star" onClick={() => this.toggleUnLike(3) } /> :*/}
+                                                  {/*<Icon type="star-o" onClick={() => this.toggleLike(3) } />*/}
+                                              {/*}*/}
+                                            {/*</Row>*/}
                                         </span>
                   </div>
                 </Card>
               </Col>
               <Col span="6">
                 <Card bodyStyle={{ padding: 0 }}>
+                  <div className={sty.content}>
+                    <div className={sty.logo}>
+
+                    </div>
+                    <div className={sty.price}>
+                      ￥399
+                    </div>
+                  </div>
                   <div className={sty.image}>
-                    <img alt="example" width="100%" src="http://temp.im/250x160" />
+
+                  </div>
+                  <div className={sty.text}>
+                    <div>北京</div>
+                    <div>宝马活动真车体验</div>
                   </div>
                   <div className={sty.card}>
                     2016年11月30日21:07:27
                     <span style={{ float: 'right', fontSize: '16px', lineHeight: '16px' }}
                           className={sty.iconLayer}>
-                                            <Row gutter={12}>
-                                                 <Icon type="export" onClick={() =>this.modalSuccess() } />
+                                            {/*<Row gutter={12}>*/}
+                                                 {/*<Icon type="export" onClick={() =>this.modalSuccess() } />*/}
 
-                                              {
-                                                this.state.like.item3 ?
-                                                  <Icon type="star" onClick={() => this.toggleUnLike(3) } /> :
-                                                  <Icon type="star-o" onClick={() => this.toggleLike(3) } />
-                                              }
-                                            </Row>
-                                        </span>
-                  </div>
-                </Card>
-              </Col>
-              <Col span="6">
-                <Card bodyStyle={{ padding: 0 }}>
-                  <div className={sty.image}>
-                    <img alt="example" width="100%" src="http://temp.im/250x160" />
-                  </div>
-                  <div className={sty.card}>
-                    2016年11月30日21:07:27
-                    <span style={{ float: 'right', fontSize: '16px', lineHeight: '16px' }}
-                          className={sty.iconLayer}>
-                                            <Row gutter={12}>
-                                                 <Icon type="export" onClick={() =>this.modalSuccess() } />
-
-                                              {
-                                                this.state.like.item4 ?
-                                                  <Icon type="star" onClick={() => this.toggleUnLike(4) } /> :
-                                                  <Icon type="star-o" onClick={() => this.toggleLike(4) } />
-                                              }
-                                            </Row>
+                                              {/*{*/}
+                                                {/*this.state.like.item4 ?*/}
+                                                  {/*<Icon type="star" onClick={() => this.toggleUnLike(4) } /> :*/}
+                                                  {/*<Icon type="star-o" onClick={() => this.toggleLike(4) } />*/}
+                                              {/*}*/}
+                                            {/*</Row>*/}
                                         </span>
                   </div>
                 </Card>
@@ -342,47 +391,55 @@ class Home extends React.Component {
           {/* 活动分类 */}
           <div className={sty.brandActivity}>
             <div className={sty.action}>
-              <h1>活动分类</h1>
-              <span style={{ float: 'right' }}>
-                                <Link to="typeCampaignList">更多</Link>
-                            </span>
+              活动分类
             </div>
 
 
             <Row className={sty.activityRow}>
               <Col span="16" className={sty.children}>
+                <div className={sty.mask}></div>
                 <Link to="/typeCampaignList">
                   亲子
                 </Link>
               </Col>
               <Col span="8" className={sty.sport}>
+                <div className={sty.mask}></div>
                 <Link to="/typeCampaignList">
-                  运动
+                  运动 & 户外
                 </Link>
               </Col>
+            </Row>
+              <Row className={sty.activityRow}>
               <Col span="8" className={sty.food}>
+                <div className={sty.mask}></div>
                 <Link to="/typeCampaignList">
                   饮食
                 </Link>
               </Col>
               <Col span="8" className={sty.play}>
+                <div className={sty.mask}></div>
                 <Link to="/typeCampaignList">
-                  娱乐、社交、赛事
+                  聚会 & 娱乐
                 </Link>
               </Col>
               <Col span="8" className={sty.course}>
+                <div className={sty.mask}></div>
                 <Link to="/typeCampaignList">
-                  课程
+                  教育 & 课程
                 </Link>
               </Col>
+              </Row>
+            <Row className={sty.activityRow}>
               <Col span="16" className={sty.comm}>
+                <div className={sty.mask}></div>
                 <Link to="/typeCampaignList">
-                  商业
+                  商业 & 会议
                 </Link>
               </Col>
               <Col span="8" className={sty.art}>
+                <div className={sty.mask}></div>
                 <Link to="/typeCampaignList">
-                  艺术、音乐
+                  艺术 & 展览
                 </Link>
               </Col>
             </Row>
@@ -390,10 +447,15 @@ class Home extends React.Component {
 
 
           <div>
-            <h1>兴趣组</h1>
+            <div className={sty.action}>
+              社区
+            </div>
             <Row className={sty.activityRow}>
-              <Col span="24">
-                组局
+              <Col span="24" className={sty.inst}>
+                <div className={sty.mask}></div>
+                <Link to="/typeCampaignList">
+                兴趣组
+                </Link>
               </Col>
             </Row>
           </div>
