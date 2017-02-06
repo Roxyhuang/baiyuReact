@@ -7,9 +7,9 @@ export default {
   state: {
     isFetching: false,
     exception: null,
-    brandCampaignList: {},
-    cityList: {},
-    typeList: {},
+    brandCampaignList: [],
+    cityList: [],
+    typeList: [],
 
   },
   reducers: {
@@ -45,6 +45,7 @@ export default {
     setup({ dispatch, history }) {
        history.listen(({ pathname, query }) => {
         if (pathname === '/') {
+          dispatch({type:'auth'});
           dispatch({ type: 'fetchBrand'});
           dispatch({type:'fetchTypeList'});
           dispatch({type:'fetchCityList'});

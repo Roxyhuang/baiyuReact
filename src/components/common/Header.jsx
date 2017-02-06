@@ -7,12 +7,12 @@ const Header = (props) => {
     <header className={s.container}>
       <Link to="/">
         <div className={s.logo}>
-        </div>
+        </div>河a
       </Link>
       <div className={s.menuAction}>
         <span className={s.create}><Link to="/createCampaign">发布活动</Link></span>
         <span><Link to='/register'>注册</Link></span>
-        <span><Link to='/loginccçç'>登录</Link></span>
+        <span><Link to='/login'>登录</Link></span>
         <span><Link to='/register'>帮助</Link></span>
         <span><Link to='/register'>ENG</Link></span>
       </div>

@@ -68,7 +68,7 @@ class Frame extends React.Component {
                 <Modal
                     visible={this.state.visible}
                     title="登录"
-                    onOk={() => this.handleOk()}
+                    onOk={() => this.handleOk()}飞ram
                     onCancel={() => this.handleCancel()}
                     footer={[
                         <Button key="back" type="ghost" size="large" onClick={() => this.handleCancel()}>稍后登录</Button>,

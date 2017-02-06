@@ -12,16 +12,35 @@ module.exports = {
         "data": [
           {
             BrandId: 1,
-            BrandName: '东风日产线下活动--上海',
+            BrandName: '宝马线下活动--上海',
             BrandLogo: 'http://img2.shucar.com/upfiles/thumb/2012-04-11/5/573193813810.jpg',
-            ActivityAddress: '北京',
+            imgOne:'http://img0.imgtn.bdimg.com/it/u=478796987,570255139&fm=23&gp=0.jpg',
+            ActivityAddress: '上海',
             ActivityTime: "1999-11-23",
+            price:"￥100",
           },
           {
             BrandId: 2,
-            BrandName: 'http://img2.shucar.com/upfiles/thumb/2012-04-11/5/573193813810.jpg',
-            BrandLogo: '东风日产线下活动--北京',
+            BrandLogo: 'http://img2.shucar.com/upfiles/thumb/2012-04-11/5/573193813810.jpg',
+            imgOne:'http://img0.imgtn.bdimg.com/it/u=478796987,570255139&fm=23&gp=0.jpg',
+            BrandName: '东风日产线下活动--上海',
             ActivityAddress: '上海',
+            ActivityTime: "1999-11-24",
+          },
+          {
+            BrandId: 3,
+            BrandLogo: 'http://img2.shucar.com/upfiles/thumb/2012-04-11/5/573193813810.jpg',
+            imgOne:'http://img0.imgtn.bdimg.com/it/u=478796987,570255139&fm=23&gp=0.jpg',
+            BrandName: '东风日产线下活动--北京',
+            ActivityAddress: '北京',
+            ActivityTime: "1999-11-24",
+          },
+          {
+            BrandId: 4,
+            BrandLogo: 'http://img2.shucar.com/upfiles/thumb/2012-04-11/5/573193813810.jpg',
+            imgOne:'http://img0.imgtn.bdimg.com/it/u=478796987,570255139&fm=23&gp=0.jpg',
+            BrandName: '东风日产线下活动--广州',
+            ActivityAddress: '广州',
             ActivityTime: "1999-11-24",
           }
         ]
@@ -37,8 +56,8 @@ module.exports = {
         "msg": "已登录",
         "flag": true,
         "data": [
-          { typeId: "0", city: "亲自" },
-          { typeId: "1", city: "运动" },
+          { typeId: "0", name: "亲子" },
+          { typeId: "1", name: "运动" },
         ]
       });
     }, 500);

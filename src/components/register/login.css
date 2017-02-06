@@ -1,64 +1,163 @@
-.button{
-	display: inline-block;
-	width: 50px;
+.button {
+    display: inline-block;
+    width: 50px;
 }
-.title{
-	text-align: center;
-	font-size: 22px;
-	font-weight: 600;
-	color: #fea733;
-	margin-bottom: 24px;
+
+.title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fea733;
+    margin-bottom: 24px;
 }
-.container{
-	margin: 50px 50px;
-	min-height: 1000px;
+
+.container {
+    margin: 50px 50px;
+    min-height: 1000px;
 }
-.tab{
-	margin-left: 25px;
-	font-size: 40px;
+
+.tab {
+    margin-left: 25px;
+    font-size: 40px;
 }
+
 .ant-select-selection-selected-value {
-  width: 70px;
+    width: 70px;
 }
-.label{
-	font-size: 18px;
-	margin-bottom: 6px;
+
+.label {
+    font-size: 16px;
+    margin-bottom: 6px;
 }
+
 :global(.ant-tabs-bar) {
-	border: 0;
+    border: 0;
 }
 
 :global(.ant-tabs-nav-scroll) {
-	display: flex;
-}
-:global(.ant-tabs-nav) {
-	margin: 0 auto;
-	font-weight: 600;
-}
-:global(.ant-tabs-ink-bar) {
-	background: #fff;
+    display: flex;
 }
 
-.container :global(.ant-input){
-	width: 723px;
+:global(.ant-tabs-nav) {
+    margin: 0 auto;
+    font-weight: 600;
 }
-form{
-	width: 723px;
-	margin: 0 auto;
+
+:global(.ant-tabs-ink-bar) {
+    background: #fff;
 }
-form input {
-	width: 723px;
-	height: 32px;
+
+.container :global(.ant-input) {
+    width: 723px;
 }
-.resigterBtn{
-	width: 723px !important;
-	height: 48px;
+
+form {
+    width: 723px;
+    margin: 0 auto;
 }
-.tips{
-	color: #7d7d7d;
-	font-size: 18px;
-	text-align: right;
-	margin-top: 18px;
+
+.registerForm input {
+    width: 723px;
+    height: 42px !important;
 }
+
+.resigterBtn {
+    width: 723px !important;
+    height: 48px;
+}
+
+.tips {
+    color: #7d7d7d;
+    font-size: 14px;
+    text-align: right;
+    margin-top: 18px;
+}
+
+.tips a {
+    color: #7d7d7d;
+    border-bottom: solid 1px #7d7d7d;
+}
+.tips2 {
+    color: #7d7d7d;
+    font-size: 14px;
+    text-align: right;
+    margin: 16px 0
+}
+
+.mailLine {
+    position: relative;
+}
+
+.mailBtn {
+    position: absolute;
+    right: 14px;
+    top: 7px;
+    background: #7d7d7d;
+    color: #fff;
+}
+
+.mailBtn:hover {
+
+}
+
+.quickLogin {
+    display: flex;
+    width: 723px;
+    justify-content: center;
+    align-items: center;
+    margin: 24px auto 0;
+    flex-wrap: wrap;
+
+}
+
+.quickLogin .text {
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 12px 0;
+}
+
+.quickLogin .line {
+    width: 310px;
+    height: 1px;
+    background: #000;
+    align-items: center;
+}
+
+.quickLogin .weixin {
+    width: 36px;
+    height: 29.5px;
+    background: url("../../assets/register/weixin.png");
+    background-size: 100% 100%;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 24px;
+}
+.brandContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.brandMsg {
+    margin-right: 70px;
+}
+.brandLayer {
+    display: flex;
+    align-content: space-between;
+}
+
+.brandTitle{
+    margin-bottom: 34px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.container .contract{
+    width: 320px;
+}
+.container .sex span {
+    font-size: 14px;
+}
+
+
 
 

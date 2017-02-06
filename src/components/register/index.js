@@ -1,10 +1,23 @@
 import React from 'react';
+import { connect } from 'dva';
 import { Form,Icon,Tabs,Input,Button,Row,Col,Select,Upload,Checkbox } from 'antd';
 import sty from './login.css';
 import classNames from 'classnames';
 const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
 const Option = Select.Option;
+
+const mapStateToProps = state => ({
+	register: state.register,
+});
+
+const mapDispatchToProps = dispatch => {
+	return {
+		submit(payload){
+			dispatch({ type: 'register/register', payload });
+		}
+	}
+};
 
 function handleChange(value) {
     console.log(`selected ${value}`);
@@ -23,6 +36,7 @@ function handleBrandSubmit(){
 }
 
 const Register  = Form.create()(React.createClass({
+
 	getInitialState(){
 		return{
 			passwordConsistency:false
@@ -53,27 +67,26 @@ const Register  = Form.create()(React.createClass({
         	offset: 6,
       		},
    	 	};
-    
         return (
             <div className={sty.container}>
 				<div className={sty.title}>欢迎加入</div>
-				<Tabs defaultActiveKey="Brand" onChange={callback}>
+				<Tabs defaultActiveKey="Individual" onChange={callback}>
     				<TabPane className={sty.tab} tab="个人用户注册" key="Individual">
 
     					<Form horizontal onSubmit={handleIndividualSubmit}>
 								<div className={sty.label}>邮箱</div>
     						<FormItem {...formItemLayout}>
-    							<Row gutter={8}>
+    							<Row gutter={8} className={sty.vCodeLine}>
     								<Col span={12}>
     									{getFieldDecorator('phone', {
-            								rules: [{ required: true, message: 'Please input your phone number!' }],
+            								rules: [{ required: true, message: '请输入您的邮箱' }],
           								})(
             							<Input  />
           							)}
           							</Col>
-          							{/*<Col span={12}>*/}
-          								{/*<Button size="large">获取验证码</Button>*/}
-          							{/*</Col>*/}
+          							<Col span={12}	>
+          								<Button  className={sty.vCode} size="large">发送验证码</Button>
+          							</Col>
           						</Row>
           					</FormItem>
 										<div className={sty.label}>验证码</div>
@@ -115,7 +128,7 @@ const Register  = Form.create()(React.createClass({
 									{/*<Checkbox>我已经阅读 <a>隐私条款</a></Checkbox>*/}
 								{/*)}*/}
 							{/*</FormItem>*/}
-          						<Button type="primary" htmlType="submit" size="large" className={sty.resigterBtn}>注册</Button>
+          						<Button type="primary" htmlType="submit" size="large" className={sty.resigterBtn} onClick={()=>{this.dispatch({ type: 'register'})}}>注册</Button>
 								<div className={sty.tips}>注册表示同意百愚网的服务条款及隐私政策</div>
     					</Form>
     				</TabPane>
@@ -202,4 +215,4 @@ const Register  = Form.create()(React.createClass({
 		);
     }
 }));
-export default Register;
+export default connect(mapStateToProps, mapDispatchToProps)(Form.create({})(Register));

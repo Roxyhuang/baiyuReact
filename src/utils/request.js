@@ -16,7 +16,10 @@ function get(url, params) {
 }
 
 function post(url, params) {
-    return axios.post(url, stringify(params)).then((response) => {
+    return axios({url:url,params:stringify(params),method:'POST',
+        headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Headers":"Origin,X-Requested-With,Content-Type,Accept",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS","Content-Type":"application.json;charset=utf-8"
+    }}).then((response) => {
         if (response && response.data) {
             // auth(response.data);
             return response.data;
@@ -43,7 +46,7 @@ function put(url, params) {
     return axios.put(url, stringify(params)).then((response) => {
         if (response && response.data) {
             // auth(response.data);
-            return response.data;npm
+            return response.data;
         }
     }).then((res) => res).catch((error) => {
         console.error(error)

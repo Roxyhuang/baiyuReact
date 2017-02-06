@@ -17,7 +17,6 @@ import {
 
 } from 'antd';
 import classNames from 'classnames';
-import { fetchList } from '../../services/home';
 import { connect } from 'dva';
 import { Link } from 'dva/router';
 
@@ -59,13 +58,6 @@ class Home extends React.Component {
     };
   }
 
-  componentDidMount() {
-  }
-
-  componentWillReceiveProps(nextProps) {
-
-  }
-
   handleInputChange(key, value) {
     let { form } = this.state;
     form[key] = value.target.value;
@@ -73,9 +65,10 @@ class Home extends React.Component {
   }
 
   handleChange(value, act) {
-    let { form } = this.state;
-    form[act] = value;
-    this.setState(form);
+    console.log(value);
+    // let { form } = this.state;
+    // form[act] = value;
+    // this.setState(form);
   }
 
   handleSearch(e) {
@@ -175,7 +168,13 @@ class Home extends React.Component {
   }
 
   render() {
-    const brandCampaignList = this.props.home.brandCampaign || {};
+    // const cityList = this.props.home.cityList || {};
+    // console.log(this.props.home);
+    const data = this.props.home;
+    const cityList = data.cityList || [];
+    const brandCampaignList = data.brandCampaignList || [];
+    const typeList = data.typeList || [];
+
     const btnCls = classNames({
       'ant-search-btn': true,
       'ant-search-btn-noempty': !!this.state.form.keyword.trim(),
@@ -185,6 +184,7 @@ class Home extends React.Component {
     });
     return (
       <div className={sty.main}>
+
         {/* Carousel */}
         <Carousel autoplay dots={false}>
           <div>
@@ -203,19 +203,30 @@ class Home extends React.Component {
           <Form inline onSubmit={this.handleSearch} style={{ margin: '0 auto', width: 620 }}>
             <FormItem>
               <Select size="default" placeholder='类别' style={{ width: 145 }}
-                      onChange={this.handleChange.bind(this, 'cate')}>
-                <Option value="">品牌活动</Option>
-                <Option value="cate1">分类活动</Option>
+                      >
+                {
+                  typeList.map((obj) => {
+                   return <Option key={obj.typei}value={obj.typeId || '0'}>{obj.name || '城市'}</Option>
+                  })
+                }
+                {/*<Option value="">品牌活动</Option>*/}
+                {/*<Option value="cate1">分类活动</Option>*/}
               </Select>
             </FormItem>
             <FormItem>
               <Select size="default" placeholder="城市" style={{ width: 145 }}
-                      onChange={this.handleChange.bind(this, 'city')}>
+                      >
                 <Option value="">城市</Option>
-                <Option value="beijing">北京</Option>
-                <Option value="shanghai">上海</Option>
-                <Option value="shenzhen">深圳</Option>
-                <Option value="guangzhou">广州</Option>
+                {
+                  cityList.map((obj)=> {
+                      return <Option  key={obj.code} value={obj.code || '0'}>{obj.city || '城市'}</Option>
+                    }
+                  )
+                }
+                {/*<Option value="beijing">北京</Option>*/}
+                {/*<Option value="shanghai">上海</Option>*/}
+                {/*<Option value="shenzhen">深圳</Option>*/}
+                {/*<Option value="guangzhou">广州</Option>*/}
               </Select>
             </FormItem>
             <FormItem>
@@ -248,142 +259,44 @@ class Home extends React.Component {
                 <Link to="typeCampaignList">更多</Link>
               </div>
             </div>
-
             <Row className={sty.row}>
-              <Col span="6">
-                <Card bodyStyle={{ padding: 0}}>
-                  <div className={sty.content}>
-                    <div className={sty.logo}>
+            {
+              brandCampaignList.map((obj) => {
+                return (
 
-                    </div>
-                    <div className={sty.price}>
-                      ￥399
-                    </div>
-                  </div>
-                  <div className={sty.image}>
+                    <Col span="6" key={obj.BrandId}>
+                      <Card bodyStyle={{ padding: 0 }}>
+                        <div className={sty.content}>
+                          <img  className={sty.logo} src={obj.BrandLogo}/>
+                          <div className={sty.price}>
+                            {obj.price || "免费"}
+                          </div>
+                        </div>
+                        <img className={sty.image}  src={obj.imgOne}/>
+                        <div className={sty.text}>
+                          <div>{obj.ActivityAddress}</div>
+                          <div>{obj.BrandName}</div>
+                        </div>
+                        <div className={sty.card}>
+                          {obj.ActivityTime}
+                          {/*<span style={{ float: 'right', fontSize: '16px', lineHeight: '16px' }}>*/}
+                          {/*<Row gutter={12}>*/}
+                          {/*<Icon type="export" onClick={() =>this.modalSuccess() } />*/}
+                          {/*{*/}
+                          {/*this.state.like.item1 ?*/}
+                          {/*<Icon type="star" onClick={() => this.toggleUnLike(1) } /> :*/}
+                          {/*<Icon type="star-o" onClick={() => this.toggleLike(1) } />*/}
+                          {/*}*/}
 
-                  </div>
-                  <div className={sty.text}>
-                    <div>北京</div>
-                    <div>宝马活动真车体验</div>
-                  </div>
-                  <div className={sty.card}>
-                    2016年11月30日21:07:27
-                    {/*<span style={{ float: 'right', fontSize: '16px', lineHeight: '16px' }}>*/}
-                                            {/*<Row gutter={12}>*/}
-                                                {/*<Icon type="export" onClick={() =>this.modalSuccess() } />*/}
-                                              {/*{*/}
-                                                {/*this.state.like.item1 ?*/}
-                                                  {/*<Icon type="star" onClick={() => this.toggleUnLike(1) } /> :*/}
-                                                  {/*<Icon type="star-o" onClick={() => this.toggleLike(1) } />*/}
-                                              {/*}*/}
+                          {/*</Row>*/}
+                          {/*</span>*/}
+                        </div>
+                      </Card>
+                    </Col>
 
-                                            {/*</Row>*/}
-                                        {/*</span>*/}
-                  </div>
-                </Card>
-              </Col>
-              <Col span="6">
-                <Card bodyStyle={{ padding: 0 }}>
-                  <div className={sty.content}>
-                    <div className={sty.logo}>
-
-                    </div>
-                    <div className={sty.price}>
-                      ￥399
-                    </div>
-                  </div>
-                  <div className={sty.image}>
-
-                  </div>
-                  <div className={sty.text}>
-                    <div>北京</div>
-                    <div>宝马活动真车体验</div>
-                  </div>
-                  <div className={sty.card}>
-                    2016年11月30日21:07:27
-                    <span style={{ float: 'right', fontSize: '16px', lineHeight: '16px' }}
-                          className={sty.iconLayer}>
-                                            {/*<Row gutter={12}>*/}
-                                                {/*<Icon type="export" onClick={() =>this.modalSuccess() } />*/}
-                                              {/*{*/}
-                                                {/*this.state.like.item2 ?*/}
-                                                  {/*<Icon type="star" onClick={() => this.toggleUnLike(2) } /> :*/}
-                                                  {/*<Icon type="star-o" onClick={() => this.toggleLike(2) } />*/}
-                                              {/*}*/}
-                                            {/*</Row>*/}
-                                        </span>
-                  </div>
-                </Card>
-              </Col>
-              <Col span="6">
-                <Card bodyStyle={{ padding: 0 }}>
-                  <div className={sty.content}>
-                    <div className={sty.logo}>
-
-                    </div>
-                    <div className={sty.price}>
-                      ￥399
-                    </div>
-                  </div>
-                  <div className={sty.image}>
-
-                  </div>
-                  <div className={sty.text}>
-                    <div>北京</div>
-                    <div>宝马活动真车体验</div>
-                  </div>
-                  <div className={sty.card}>
-                    2016年11月30日21:07:27
-                    <span style={{ float: 'right', fontSize: '16px', lineHeight: '16px' }}
-                          className={sty.iconLayer}>
-                                            {/*<Row gutter={12}>*/}
-                                                 {/*<Icon type="export" onClick={() =>this.modalSuccess() } />*/}
-
-                                              {/*{*/}
-                                                {/*this.state.like.item3 ?*/}
-                                                  {/*<Icon type="star" onClick={() => this.toggleUnLike(3) } /> :*/}
-                                                  {/*<Icon type="star-o" onClick={() => this.toggleLike(3) } />*/}
-                                              {/*}*/}
-                                            {/*</Row>*/}
-                                        </span>
-                  </div>
-                </Card>
-              </Col>
-              <Col span="6">
-                <Card bodyStyle={{ padding: 0 }}>
-                  <div className={sty.content}>
-                    <div className={sty.logo}>
-
-                    </div>
-                    <div className={sty.price}>
-                      ￥399
-                    </div>
-                  </div>
-                  <div className={sty.image}>
-
-                  </div>
-                  <div className={sty.text}>
-                    <div>北京</div>
-                    <div>宝马活动真车体验</div>
-                  </div>
-                  <div className={sty.card}>
-                    2016年11月30日21:07:27
-                    <span style={{ float: 'right', fontSize: '16px', lineHeight: '16px' }}
-                          className={sty.iconLayer}>
-                                            {/*<Row gutter={12}>*/}
-                                                 {/*<Icon type="export" onClick={() =>this.modalSuccess() } />*/}
-
-                                              {/*{*/}
-                                                {/*this.state.like.item4 ?*/}
-                                                  {/*<Icon type="star" onClick={() => this.toggleUnLike(4) } /> :*/}
-                                                  {/*<Icon type="star-o" onClick={() => this.toggleLike(4) } />*/}
-                                              {/*}*/}
-                                            {/*</Row>*/}
-                                        </span>
-                  </div>
-                </Card>
-              </Col>
+                )
+              })
+            }
             </Row>
           </div>
 
@@ -409,7 +322,7 @@ class Home extends React.Component {
                 </Link>
               </Col>
             </Row>
-              <Row className={sty.activityRow}>
+            <Row className={sty.activityRow}>
               <Col span="8" className={sty.food}>
                 <div className={sty.mask}></div>
                 <Link to="/typeCampaignList">
@@ -428,7 +341,7 @@ class Home extends React.Component {
                   教育 & 课程
                 </Link>
               </Col>
-              </Row>
+            </Row>
             <Row className={sty.activityRow}>
               <Col span="16" className={sty.comm}>
                 <div className={sty.mask}></div>
@@ -454,7 +367,7 @@ class Home extends React.Component {
               <Col span="24" className={sty.inst}>
                 <div className={sty.mask}></div>
                 <Link to="/typeCampaignList">
-                兴趣组
+                  兴趣组
                 </Link>
               </Col>
             </Row>

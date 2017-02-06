@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-class Login  extends React.Component {
+class Forget  extends React.Component {
 
   constructor(props) {
     super(props);
@@ -201,4 +201,4 @@ class Login  extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form.create({})(Login));
+export default connect(mapStateToProps, mapDispatchToProps)(Form.create({})(Forget));
