@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Form,Icon,Tabs,Input,Button,Row,Col,Select,Upload,Checkbox,Radio,Cascader } from 'antd';
+import { Form,Icon,Tabs,Input,Button,Row,Col,Select,Upload,Checkbox,Radio,Cascader,Modal } from 'antd';
 import sty from './login.css';
 import classNames from 'classnames';
 const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
 const Option = Select.Option;
+const confirm = Modal.confirm;
 
 const mapStateToProps = state => ({
   register: state.register,
@@ -59,7 +60,21 @@ class Register  extends React.Component {
     console.log(e);
   };
 
+  showConfirm() {
+  confirm({
+    title: '注册成功?',
+    content: '让大家更了解你，现在就去完善个人主页',
+    onOk() {
+      return new Promise((resolve, reject) => {
+        setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
+      }).catch(() => console.log('Oops errors!'));
+    },
+    onCancel() {},
+  });
+}
+
   render() {
+    const confirm = Modal.confirm;
     const RadioGroup = Radio.Group;
     const uploadButton = (
       <Button type="ghost">
@@ -94,10 +109,11 @@ class Register  extends React.Component {
         }],
       }],
     }];
+
   return (
     <div className={sty.container}>
       <div className={sty.title}>欢迎加入</div>
-      <Tabs defaultActiveKey="Brand" onChange={()=> this.callback}>
+      <Tabs defaultActiveKey="Individual" onChange={()=> this.callback}>
         <TabPane className={sty.tab} tab="个人用户" key="Individual">
           <Form horizontal className={sty.registerForm} onSubmit={()=>this.handleIndividualSubmit}>
             <div className={sty.label}>邮箱</div>
@@ -151,7 +167,7 @@ class Register  extends React.Component {
                 </Row>
               )}
             </FormItem>
-            <Button type="primary" htmlType="submit" size="large" className={sty.resigterBtn} onClick={()=>{this.dispatch({ type: 'register'})}}>注册</Button>
+            <Button type="primary" htmlType="submit" size="large" className={sty.resigterBtn} onClick={()=>{this.showConfirm()}}>注册</Button>
             <div className={sty.tips}>注册表示同意百愚网的<a>服务条款</a>及<a>隐私政策</a></div>
           </Form>
           <div className={sty.quickLogin}>

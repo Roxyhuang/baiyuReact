@@ -7,8 +7,8 @@ export default {
     exception: null,
   },
   reducers: {
-    register(state, { payload:{ data:content } }){
-      return { ...state, msg:content };
+    register(state){
+      return { ...state};
     },
   },
   effects: {

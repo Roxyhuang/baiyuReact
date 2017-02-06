@@ -139,7 +139,7 @@ class Login  extends React.Component {
                   )}
                 </FormItem>
               </div>
-              <Button type="primary" htmlType="submit" size="large" className={sty.resigterBtn} onClick={()=>{this.dispatch({ type: 'register'})}}>登录</Button>
+              <Button type="primary" htmlType="submit" size="large" className={sty.resigterBtn} onClick={()=>{this.props.submit()}}>登录</Button>
               <div className={sty.tips}>注册表示同意百愚网的<a>服务条款</a>及<a>隐私政策</a></div>
             </Form>
             <div className={sty.quickLogin}>
